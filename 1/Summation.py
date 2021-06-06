@@ -55,3 +55,54 @@ class Solution:
             third.pop(0)
 
         return int("".join(map(str, first))) + int("".join(map(str, second))) == int("".join(map(str, third)))
+
+
+def isSumEqual(self, firstWord: str, secondWord: str, targetWord: str) -> bool:
+    d = {
+        'a': '0', 'b': '1', 'c': '2',
+        'd': '3', 'e': '4', 'f': '5',
+        'g': '6', 'h': '7', 'i': '8',
+        'j': '9'
+    }
+    lst1 = []
+    lst2 = []
+    lst3 = []
+    for i in firstWord:
+        x = d.get(i)
+        lst1.append(x)
+    firstNum = int(''.join(lst1))
+
+    for j in secondWord:
+        y = d.get(j)
+        lst2.append(y)
+    secondNum = int(''.join(lst2))
+
+    for k in targetWord:
+        z = d.get(k)
+        lst3.append(z)
+    targetNum = int(''.join(lst3))
+
+    result = firstNum + secondNum
+
+    if result == targetNum:
+        return True
+    else:
+        return False
+
+
+def isSumEqual(self, firstWord: str, secondWord: str, targetWord: str) -> bool:
+    str1 = ""
+    for i in firstWord:
+        str1 += str(ord(i)-ord('a'))
+
+    str2 = ""
+    for i in secondWord:
+        str2 += str(ord(i)-ord('a'))
+
+    target_str = ""
+    for i in targetWord:
+        target_str += str(ord(i)-ord('a'))
+
+    if int(str1)+int(str2) == int(target_str):
+        return True
+    return False
