@@ -1,4 +1,4 @@
-const divisorSum = (num: number) => {
+const DivisorSum = (num: number) => {
   const results = []
   for (let i = 1; i <= num; i++) {
     if (num % i == 0 && i < 2000000) {
